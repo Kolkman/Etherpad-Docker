@@ -1,34 +1,34 @@
-# Etherpad-Lite Dockerfile using SQLite as backend.
-#
-# https://github.com/fuerst/etherpad-docker
-# Based on work by Bernhard Fürst, bernhard.fuerst@fuerstnet.de
-# that was in teurn inspired by works from John E. Arnold and Evan Hazlett.
-#
-# Version 1.0
+# Persistent Etherpad-Lite Docker instance using SQLite of MySQL as
+# backend.
 
-# Use Docker's nodejs, which is based on ubuntu
-FROM etherpad/etherpad:latest
+# (c) 1920 O.M. Kolkman
+# https://github.com/Kolkman/Etherpad-Docker
+
+# Based on work by Bernhard Fürst, bernhard.fuerst@fuerstnet.de (see
+# https://github.com/fuerst/etherpad-docker) that was in teurn inspired
+# by works from John E. Arnold and Evan Hazlett.  Version 1.0
+
+
+
+FROM etherpad/etherpad:stable
 MAINTAINER Olaf M. Kolkman, github@dacht.net
+
+
+USER root
+
+
 
 #
 # EXAMPLE:
-#   ETHERPAD_PLUGINS="ep_codepad ep_author_neat"
+#ETHERPAD_PLUGINS="ep_codepad ep_author_neat"
 #ARG ETHERPAD_PLUGINS=
 
-
+WORKDIR /
 
 # Get Etherpad-lite's other dependencies
-#RUN apt update
-#RUN apt install -y sqlite3 unzip gzip curl python libssl-dev pkg-config build-essential supervisor abiword
+RUN apt-get update
+RUN apt-get install -y sqlite3 abiword
 
-WORKDIR /opt/
-
-# Grab the latest Git version
-#RUN curl -SLO https://github.com/ether/etherpad-lite/archive/${ETHERPAD_VERSION}.zip \
-#  && unzip ${ETHERPAD_VERSION}.zip \
-#  && rm ${ETHERPAD_VERSION}.zip \
-#  && mv etherpad-lite-${ETHERPAD_VERSION} etherpad-lite
-USER root
 
 WORKDIR /opt/etherpad-lite
 
@@ -46,7 +46,6 @@ COPY settings-corrector.js settings-corrector.js
 COPY entrypoint.sh /entrypoint.sh
 
 # Add conf files
-ADD supervisor.conf /etc/supervisor/supervisor.conf
 ADD settings.json /opt/etherpad-lite/settings.json.master
  
 # Allow changes to settings.conf as well as the Sqlite database being persistent.

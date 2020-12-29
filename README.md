@@ -45,7 +45,7 @@ version: "2"
 
 services:
   server:
-    image: Kolkman/etherpad-docker:stable
+    image: Kolkman/Etherpad-Docker:stable
     restart: always
     volumes:
       - /opt/etherpad-lite/var:/opt/etherpad-lite/var
