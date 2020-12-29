@@ -6,7 +6,7 @@ Run [Etherpad Lite](https://github.com/ether/etherpad-lite) inside a Docker cont
 This variant of an Etherpad Docker container is characterized by:
 
 At run time:
-* Follows the _stable_ from upstream etherpad/etherpad
+* Follows upstream etherpad - tags correspond to etherpad/etherpad tags in docker hub.
 * Uses SQLite or MySQL as a databackend
 * Persistent data, plugins and settings.
 * Create administration user with configurable password.
