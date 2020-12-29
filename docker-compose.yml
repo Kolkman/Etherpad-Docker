@@ -4,7 +4,7 @@ services:
 
 
  etherpadlite:
-    build: .
+    image: kolman/etherpad_persistent
     container_name: EtherPadLite
     restart: unless-stopped
     volumes:
@@ -12,8 +12,8 @@ services:
       - ./etherpad-lite/node_modules:/opt/etherpad-lite/node_modules
     ports:
       - "9001:9001"
-    environment:
-     - ETHERPAD_ADMIN_PASSWORD=78051ac7
+#    environment:
+#     - ETHERPAD_ADMIN_PASSWORD=Your-Password-Here
     networks:
      - dbnet
 
