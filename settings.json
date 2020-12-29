@@ -33,9 +33,9 @@
   //You shouldn't use "dirty" for for anything else than testing or development
   // "dbType" : "sqlite",
   //the database specific settings
-  //"dbSettings" : {
-  //                 "filename" : "var/etherpad.sq3"
-  //               },
+  "dbSettings" : {
+                   "filename" : "var/etherpad.sq3"
+                 },
 
   // An Example of MySQL Configuration
 
@@ -43,7 +43,7 @@
     "dbSettings" : {
                     "user"    : "etherpad",
                     "host"    : "mariadb",
-                    "password": "lizeWRaMb2Ep0pq8",
+                    "password": "My-Databas-Password",
                     "database": "etherpad"
                   },
   
@@ -80,7 +80,7 @@
      If you do not uncomment this, /admin will not be available! */
   "users": {
     "admin": {
-      "password": "",
+      "password": "My-Admin-Password",
       "is_admin": true
     }
   },
