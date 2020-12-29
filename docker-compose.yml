@@ -8,8 +8,8 @@ services:
     container_name: EtherPadLite
     restart: unless-stopped
     volumes:
-      - ./etherpad-lite/var:/opt/etherpad-lite/var
-      - ./etherpad-lite/node_modules:/opt/etherpad-lite/node_modules
+      -  /opt/etherpad-lite/var:/opt/etherpad-lite/var
+      -  /opt/etherpad-lite/node_modules:/opt/etherpad-lite/node_modules
     ports:
       - "9001:9001"
 #    environment:
