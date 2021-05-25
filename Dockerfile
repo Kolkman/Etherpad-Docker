@@ -10,7 +10,7 @@
 
 
 
-FROM etherpad/etherpad:stable
+FROM etherpad/etherpad:1.8.9
 MAINTAINER Olaf M. Kolkman, github@dacht.net
 
 
