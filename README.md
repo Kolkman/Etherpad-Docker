@@ -12,6 +12,12 @@ At run time:
 * Create administration user with configurable password.
 * Support for export in DOC or PDF
 
+We try to follow the upstream etherpad/etherpad using the same
+tags. The 'latest' version pulls the 'etherpad/etherpad:stable' in its
+DOCKERFILE.
+
+This is version 1.8.11
+
 # Usage
 
 **Start an Etherpad Lite instance listening on TCP port 9001**
