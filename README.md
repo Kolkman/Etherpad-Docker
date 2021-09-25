@@ -14,7 +14,7 @@ At run time:
 
 We try to follow the upstream etherpad/etherpad using the same
 tags. The 'latest' version pulls the 'etherpad/etherpad:stable' in its
-DOCKERFILE. On hub.docker the latest build corresonds to 1.8.13.
+DOCKERFILE. On hub.docker the latest build corresonds to 1.8.14.
 
 
 
